@@ -29,7 +29,7 @@ public class makeStringPalindrome {
         return lps;
     }
 
-    static int minimumCharacters(String A){
+    static String minimumCharacters(String A){
 
         StringBuilder s = new StringBuilder();
         s.append(A);
@@ -39,11 +39,12 @@ public class makeStringPalindrome {
 
         int lps[] = computeLPSArray(s.toString());
 
-        return A.length() - lps[s.length() - 1];
+        int val = lps[s.length() - 1];
+        return  A.substring(0, val);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String A = sc.nextLine();
+        String A = sc.next();
 
         System.out.println(minimumCharacters(A));
         sc.close();
